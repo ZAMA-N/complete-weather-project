@@ -7,21 +7,28 @@
     <title>SA Weather 24</title>
   </head>
   <body>
-    <header>
+    <div class="weather-App">
+     <header>
       <form>
-        <input type="search" placeholder="enter city" required />
-        <input type="submit" value="search" />
+        <input type="search" placeholder="enter city" required  class="search-form-Input" id="search-form-Input"/>
+        <input type="submit" value="search"  class="search-form-button" id="search-form-button"/>
       </form>
     </header>
-    <h1>Durban</h1>
-    <p>
+    <main>
+        <div class="app-Data"> 
+            <div >
+    <h1 class="city">Durban</h1>
+    <p class="details" >
       <br />
       Thursday 20:02, clear sky<br />
       Humidity: 88%, Wind: 4.12km/h
     </p>
-
+</div>
+<div class="app-Temparature">
     <p>🌦20°C</p>
-
+    </div>
+    </div>
+</main>
     <footer>
       This project was coded by
       <a href="https://github.com/ZAMA-N">Zama N</a> on
