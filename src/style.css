@@ -48,11 +48,12 @@ main{
 .app-data{
     display: flex;
     justify-content: space-between;
+    height: 140px;
 }
 
-.city{margin: 0;
+.city{ margin: 0;
     font-size: 38px;
-    line-height: 48px;}
+    line-height: 30px;}
 
     .details{
         font-size: 16px;
@@ -60,10 +61,26 @@ main{
     line-height: 24px;
     font-weight: 500;
 }
-    .app-Temparature{font-size: 16px;
-    color: rgba(39, 33, 66, 0.4);
-    line-height: 24px;
-    font-weight: 500;
+    .app-Temparature{ display: flex;
+        position: relative;
+       justify-content: right;
+     bottom: 87px;
+  
+}
+.weather-temp{
+    font-size: 88px;
+    line-height: 88px;
+    font-weight: bold;
 }
 
-    }
+ .weather-app.icon{
+    width: 88px;
+    height: 88px;
+ }   
+.unit{
+     margin-top: 6px;
+    font-size: 28px;
+}
+.Humidity,.speed{
+    color: rgb(179, 13, 41);
+}
