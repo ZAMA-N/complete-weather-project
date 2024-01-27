@@ -7,9 +7,10 @@ function refresh(response) {
   let Humid=document.querySelector("#Humidity");
 let time=document.querySelector("#day-time");
 let date=new Date(response.data.time*1000)
+let iconElement=document.querySelector("#icon-app");
 
 
-
+iconElement.innerHTML =`<img src="${response.data.condition.icon_url}"class="icon" />`;
 time.innerHTML = formateDate(date);
  Humid.innerHTML=`${response.data.temperature.humidity}%` ;
 speedElement.innerHTML = `${response.data.wind.speed}km/h`;

@@ -73,12 +73,12 @@ main{
     font-weight: bold;
 }
 
- .weather-app.icon{
+ .icon{
     width: 88px;
-    height: 88px;
+    height: 89px;
  }   
 .unit{
-     margin-top: 6px;
+     margin-top: 10px;
     font-size: 28px;
 }
 .Humidity,.speed{
