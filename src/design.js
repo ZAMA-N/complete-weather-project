@@ -1,6 +1,9 @@
 function refresh(response) {
   let temp = document.querySelector("#weatherTemparature");
-  temp.innerHTML = response.data.temperature.current;
+  let newTemp = response.data.temperature.current;
+  let city = document.querySelector("#city-Element");
+  city.innerHTML = response.data.city;
+  temp.innerHTML = Math.round(newTemp);
 
   console.log(response.data);
 }
@@ -15,10 +18,11 @@ function searchCity(city) {
 function handleSearch(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-Input");
-  let city = document.querySelector("#city-Element");
-  city.innerHTML = searchInput.value;
+
   searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-formElement");
 searchFormElement.addEventListener("submit", handleSearch);
+
+searchCity("durban");
