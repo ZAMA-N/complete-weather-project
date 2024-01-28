@@ -1,11 +1,12 @@
 body {
-  background-image: url(\complete-weather-project\src\clouds-sky.jpg);
+  background-image:url("C:/Users/zaman/OneDrive/Documents/MEGA/vs code/complete-weather-project/src/dark-sky.jpg");
+  background-size: cover;
   font-family: "Roboto", "sans-serif";
-
+  
   margin: 8px;
 }
 .weather-App {
-  background-color: white;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   max-width: 600px;
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -47,7 +48,7 @@ main {
 .app-data {
   display: flex;
   justify-content: space-between;
-  height: 140px;
+  height: 100px;
 }
 
 .city {
@@ -57,6 +58,7 @@ main {
 }
 
 .details {
+    font-weight: bold;
   font-size: 16px;
   color: rgba(39, 33, 66, 0.4);
   line-height: 24px;
@@ -84,5 +86,13 @@ main {
 }
 .Humidity,
 .speed {
-  color: rgb(179, 13, 41);
+  color: #ff347f;
+}
+
+.row{
+     display: flex;
+  justify-content: space-between;
+text-align: center;
+padding: 0;
+top: 80px;
 }
