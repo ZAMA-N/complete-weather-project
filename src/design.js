@@ -18,6 +18,8 @@ speedElement.innerHTML = `${response.data.wind.speed}km/h`;
   city.innerHTML = response.data.city;
   temp.innerHTML = Math.round(newTemp);
 
+  getForcast.get(response.data.city);
+  
   console.log(response.data);
 }
 
@@ -49,9 +51,18 @@ function handleSearch(event) {
 
   searchCity(searchInput.value);
 }
+function getForcast(city){
+
+let apiKey = "40ee530ff803da5b8e0cef03o6106td1";
+let apiUrl =
+  `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metrics`;
+  axios(apiUrl).then(displayForecast);
+
+}
 
 
-function displayForecast() {
+function displayForecast(response) {
+console.log(response)
 
 let forecast= document.querySelector("#forecast");
 
@@ -82,3 +93,4 @@ searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("durban");
 displayForecast();
+getForcast();
