@@ -20,6 +20,7 @@ speedElement.innerHTML = `${response.data.wind.speed}km/h`;
 
   console.log(response.data);
 }
+
 function formateDate(date){
    let days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 let minutes=date.getMinutes()
@@ -49,7 +50,35 @@ function handleSearch(event) {
   searchCity(searchInput.value);
 }
 
+
+function displayForecast() {
+
+let forecast= document.querySelector("#forecast");
+
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+ let forecastHtml="";
+
+  days.forEach(function (day) {
+    forecastHtml= forecastHtml+ `
+      <div class="forecast-day">
+        <div class="forecast-date">${day}</div>
+        <div class="forecast-icon">🌤️</div>
+        <div class="forecast-Temperatures">
+          <div class="forecast-Temperature">
+            <strong>20º/</strong>
+          </div>
+          <div class="forecast-Temp">8º</div>
+        
+        </div>
+      </div>
+    `;
+  });
+  forecast.innerHTML=forecastHtml
+}
+
 let searchFormElement = document.querySelector("#search-formElement");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("durban");
+displayForecast();

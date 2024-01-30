@@ -1,4 +1,4 @@
-body { back
+body {
   background-image:url("C:/Users/zaman/OneDrive/Documents/MEGA/vs code/complete-weather-project/src/dark-sky.jpg");
   background-size: cover;
   font-family: "Roboto", "sans-serif";
@@ -48,7 +48,7 @@ main {
 .app-data {
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 10px;
 }
 
 .city {
@@ -89,10 +89,41 @@ main {
   color: #ff347f;
 }
 
-.row{
+.weather-forecast{
      display: flex;
   justify-content: space-between;
 text-align: center;
 padding: 0;
 top: 80px;
+}
+.forecast-date {
+  text-align: center;
+  color: #2c786c;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+.forecast-Temperatures {
+  text-align: center;
+  color: #3baea0;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-Temp {
+  padding: 0 10px;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  padding: 30px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
 }
