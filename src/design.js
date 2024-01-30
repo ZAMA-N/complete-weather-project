@@ -18,8 +18,8 @@ speedElement.innerHTML = `${response.data.wind.speed}km/h`;
   city.innerHTML = response.data.city;
   temp.innerHTML = Math.round(newTemp);
 
-  getForcast.get(response.data.city);
-  
+  getForecast(response.data.city);
+
   console.log(response.data);
 }
 
@@ -51,7 +51,7 @@ function handleSearch(event) {
 
   searchCity(searchInput.value);
 }
-function getForcast(city){
+function getForecast(city){
 
 let apiKey = "40ee530ff803da5b8e0cef03o6106td1";
 let apiUrl =
@@ -60,30 +60,41 @@ let apiUrl =
 
 }
 
+function NewDay(timestamp){
+    let date=new Date(timestamp*1000);
+    let days=["sun","Mon","Tue","wed","Thu","Fri","Sat"]
+    return days[date.getDay()]
+}
 
 function displayForecast(response) {
 console.log(response)
 
 let forecast= document.querySelector("#forecast");
 
-
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
  let forecastHtml="";
 
-  days.forEach(function (day) {
-    forecastHtml= forecastHtml+ `
+  response.data.daily.forEach(function (day, index) {
+if (index <5){
+
+    forecastHtml =
+      forecastHtml +
+      `
       <div class="forecast-day">
-        <div class="forecast-date">${day}</div>
-        <div class="forecast-icon">🌤️</div>
+        <div class="forecast-date">${NewDay(day.time)}</div>
+        <div >
+        <img src="${day.condition.icon_url} " class="forecast-icon"/></div>
         <div class="forecast-Temperatures">
           <div class="forecast-Temperature">
-            <strong>20º/</strong>
+            <strong>${Math.round(day.temperature.maximum / 10)}°/</strong>
           </div>
-          <div class="forecast-Temp">8º</div>
+          <div class="forecast-Temp">${Math.round(
+            day.temperature.minimum / 10
+          )}°</div>
         
         </div>
       </div>
     `;
+          }
   });
   forecast.innerHTML=forecastHtml
 }
@@ -92,5 +103,4 @@ let searchFormElement = document.querySelector("#search-formElement");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("durban");
-displayForecast();
-getForcast();
+
