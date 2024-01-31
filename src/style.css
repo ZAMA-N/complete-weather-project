@@ -1,6 +1,7 @@
 body {
-  background-image:url("https://images.pexels.com/photos/3839336/pexels-photo-3839336.jpeg");
-  background-size: auto;
+  background-image:url("https://images.pexels.com/photos/3839336/pexels-photo-3839336.jpeg" );
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Roboto", "sans-serif";
   
   margin: 8px;
@@ -98,6 +99,15 @@ padding: 0;
 top: 100px;
 }
 
+.forecast-day:hover{
+    background-color: rgba(35, 71, 71, 0.418);
+    color: #ff347f;
+    cursor: pointer;
+    border: 10px;
+    border-radius: 6px;
+   
+
+}
 
 .forecast-date {
   text-align: center;
