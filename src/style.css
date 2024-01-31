@@ -1,6 +1,6 @@
 body {
   background-image:url("https://images.pexels.com/photos/3839336/pexels-photo-3839336.jpeg");
-  background-size: cover;
+  background-size: auto;
   font-family: "Roboto", "sans-serif";
   
   margin: 8px;
@@ -12,7 +12,7 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
   padding: 30px;
-  opacity:0.8;
+  opacity:0.7;
 }
 
 header {
